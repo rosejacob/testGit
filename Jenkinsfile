@@ -11,6 +11,16 @@ pipeline{
                     build 'build_check'
                 }
         }
+        stage('Build docker images'){
+            steps{
+                sh(script: "docker images")
+                sh(script: """
+                cd /Users/rojacob/Desktop/Work/Docker/dockerImage
+                docker build -t dockeer-pipeline .
+                docker ps -a
+                """)
+            }
+        }
         stage('Goodbye'){
             steps{
                 echo 'Goodbye'
