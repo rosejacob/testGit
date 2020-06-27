@@ -14,10 +14,9 @@ pipeline{
         stage('Build docker images'){
             steps{
                 
-                sh(script: """
+                sh("""
                 cd /Users/rojacob/Desktop/Work/Docker/dockerImage
-                docker build -t dockeer-pipeline .
-                docker ps -a
+                pwd
                 """)
             }
         }
