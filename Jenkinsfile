@@ -10,7 +10,7 @@ pipeline{
             steps{
                     build 'build_check'
                 }
-    
+        }
         stage('Goodbye'){
             steps{
                 echo 'Goodbye'
