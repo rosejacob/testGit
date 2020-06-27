@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Build docker images'){
             steps{
-                sh(script: "docker images")
+                
                 sh(script: """
                 cd /Users/rojacob/Desktop/Work/Docker/dockerImage
                 docker build -t dockeer-pipeline .
