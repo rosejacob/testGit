@@ -1,29 +1,16 @@
-pipeline{
-    agent any
-    stages{
-        stage('Verify Branch'){
-            steps{
-                echo env.GIT_BRANCH
-            }
-        }
-        stage('Build Job'){
-            steps{
-                    build 'build_check'
-                }
-        }
-        stage('Build docker images'){
-            steps{
-                
-                sh("""
-                cd /Users/rojacob/Desktop/Work/Docker/dockerImage
-                pwd
-                """)
-            }
-        }
-        stage('Goodbye'){
-            steps{
-                echo 'Goodbye'
-            }
-        }
-    }
-}
+#!groovy
+pipeline {
+    agent none
+   stages {     
+    stage('Maven Install') {
+      agent {         
+       docker {          
+         image 'maven:3.5.0'         
+     }       
+  }       
+  steps {
+       sh 'mvn clean install'
+       }
+     }
+   }
+ }
