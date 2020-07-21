@@ -1,0 +1,50 @@
+git config --global user.email "roseprince.a@gmail.com"
+git config --global user.name "rosejacob"
+git init #initialise a git repository
+git status #tracked and untracked files
+git add <filename> #add the file
+git commit -m "Your message about the commit"
+git checkout -b branch1
+git branch
+git remote add origin https://github.com/rosejacob/testGit.git #this will point to the git repo in github
+git push origin <branchname>
+git push git@github.com:git/git.git yourbranchname #incase of remote repository
+once code is committed,create a pull request mentioning where it needs to merge
+After review,code will be merged to master
+git pull origin master
+delete the branch after merge
+git clone https://github.com/rosejacob/testGit.git # to get a repository
+git diff #changes w.r.t pushed one
+git ls-files -s #for inspecting the state of the Staging Index tree.
+get reset branch #git reset, moves both the HEAD and branch refs to the specified commit.
+git restore --staged GitCommands.txt # to remove from staged env
+git branch -d [branch name] #deletes the branch
+git checkout master #to switch to another branch
+git merge [branch name]
+git stash save #saves the changes done in local
+git stash pop #restores the most recently stashed files.
+git stash drop #discards the most recently stashed changeset.
+git reset HEAD #reset will revert the current staging index and working directory back to the HEAD commit.
+git clean #will remove untrack files
+git revert HEAD#git revert command is used for undoing changes to a repository's commit history
+Git revert is a safer alternative to git reset in regards to losing work
+git rev-parse --abbrev-ref HEAD <- this to get the current branch name
+
+
+GIT checkout process
+####################
+
+> git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/rosejacob/hermann.git # timeout=10
+Fetching upstream changes from https://github.com/rosejacob/hermann.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/rosejacob/hermann.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision d822ae541aabc24c2fd211f7ef5efba37179ed98 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d822ae541aabc24c2fd211f7ef5efba37179ed98 # timeout=10
+Commit message: "Merge pull request #138 from bitwiseman/patch-3"
+ > git rev-list --no-walk d822ae541aabc24c2fd211f7ef5efba37179ed98 # timeout=10
